@@ -101,6 +101,7 @@ h3 {
   font-size: 32px;
   font-weight: 700;
   color: #00abf0;
+  font-style: italic;
 }
 
 h3::before {
