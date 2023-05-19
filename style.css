@@ -1,5 +1,11 @@
 @import url("http;//fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
+:root {
+  --background: #001219;
+  --primary: #48cae4;
+  --accent-1: #f7b801;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,10 +15,9 @@
 }
 
 body {
-  background: #081b29;
+  background: var(--background);
   color: #ededed;
   min-height: 100vh;
-  /* height: 100%; */
 }
 
 header {
@@ -40,7 +45,7 @@ header {
   right: 0;
   width: 100%;
   height: 100%;
-  background: #081b29;
+  background: var(--background);
   animation: showRight 1s ease forwards;
   animation-delay: 0.4s;
 }
@@ -56,25 +61,25 @@ header {
 
 .navbar a:hover,
 .navbar a.active {
-  color: #00abf0;
+  color: var(--primary);
+}
+
+.navbar a.active {
+  font-weight: bold;
 }
 
 .container-x {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 4rem;
   max-width: fit-content;
-  /* border: 1px solid red; */
 }
 
 .home {
   height: 100vh - 40px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  /* border: 2px solid blue; */
-}
-
-.home-content {
 }
 
 h1 {
@@ -84,6 +89,16 @@ h1 {
   line-height: 1.2;
 }
 
+.greetings {
+  font-size: 36px;
+  font-weight: normal;
+}
+
+.name {
+  /* color: rgb(255, 128, 0); */
+  color: var(--accent-1);
+}
+
 h1::before {
   content: "";
   position: absolute;
@@ -91,27 +106,27 @@ h1::before {
   right: 0;
   width: 100%;
   height: 100%;
-  background: #081b29;
+  background: var(--background);
   animation: showRight 1s ease forwards;
   animation-delay: 0.5s;
 }
 
-h3 {
+h2 {
   position: relative;
-  font-size: 32px;
-  font-weight: 700;
-  color: #00abf0;
+  font-size: 1.3rem;
+  color: var(--primary);
   font-style: italic;
+  font-weight: normal;
 }
 
-h3::before {
+h2::before {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  background: #081b29;
+  background: var(--background);
   animation: showRight 1s ease forwards;
   animation-delay: 1.3s;
 }
@@ -129,7 +144,7 @@ h3::before {
   right: 0;
   width: 100%;
   height: 100%;
-  background: #081b29;
+  background: var(--background);
   animation: showRight 1s ease forwards;
   animation-delay: 1.6s;
 }
@@ -149,7 +164,7 @@ h3::before {
   right: 0;
   width: 100%;
   height: 100%;
-  background: #081b29;
+  background: var(--background);
   animation: showRight 1s ease forwards;
   animation-delay: 1.9s;
 }
@@ -160,35 +175,32 @@ h3::before {
   justify-content: center;
   align-items: center;
   width: 150px;
+  font-weight: bold;
   height: 100%;
-  background: #00abf0;
-  border: 2px solid #00abf0;
+  color: var(--background);
+  background: var(--primary);
+  border: 2px solid var(--primary);
   border-radius: 8px;
   font-size: 19px;
-  color: #081b29;
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 1px;
   z-index: 1;
   overflow: hidden;
-  transition: 0.5s;
+  transition: 0.25s ease-in-out;
 }
 
 .btn-box a:hover {
-  color: #00abf0;
+  box-shadow: rgba(0, 208, 255, 0.519) 0px 7px 29px 0px;
 }
 
 .btn-box a:nth-child(2) {
   background: transparent;
-  color: #00abf0;
+  color: white;
 }
 
 .btn-box a:nth-child(2)::before {
-  background: #00abf0;
-}
-
-.btn-box a:nth-child(2):hover {
-  color: #081b29;
+  background: var(--primary);
 }
 
 .btn-box a::before {
@@ -198,7 +210,7 @@ h3::before {
   left: 0;
   width: 0;
   height: 100%;
-  background: #081b29;
+  background: var(--background);
   z-index: -1;
   transition: 0.5s;
 }
@@ -206,11 +218,6 @@ h3::before {
 .btn-box a:hover::before {
   width: 100%;
 }
-
-/* section,
-.display-picture {
-  border: 3px solid green;
-} */
 
 section {
   padding: 20% 0 0 20%;
@@ -234,7 +241,7 @@ img {
   display: flex;
   gap: 1rem;
   max-width: max-content;
-  margin-top: 4rem;
+  margin-top: 2rem;
   justify-content: space-between;
 }
 
@@ -246,10 +253,10 @@ img {
   width: 40px;
   height: 40px;
   background: transparent;
-  border: 2px solid #00abf0;
+  border: 2px solid var(--primary);
   border-radius: 100%;
   font-size: 20px;
-  color: #00abf0;
+  color: var(--primary);
   text-decoration: none;
   z-index: 1;
   overflow: hidden;
@@ -257,7 +264,7 @@ img {
 }
 
 .home-sci a:hover {
-  color: #081b29;
+  color: var(--background);
 }
 
 .home-sci::before {
@@ -267,13 +274,9 @@ img {
   left: 0;
   width: 100%;
   height: 0;
-  background: #00abf0;
+  background: var(--primary);
   z-index: -1;
   transition: 0.5s;
-}
-
-.home-sci:hover::before {
-  /* height: 100%; */
 }
 
 .home-imgHover {
@@ -290,7 +293,7 @@ img {
 }
 
 home-imgHover:hover {
-  background: #081b29;
+  background: var(--background);
   opacity: 0.8;
 }
 
@@ -301,7 +304,7 @@ home-imgHover ::after {
   right: 0;
   width: 120%;
   height: 100%;
-  background: #081b29;
+  background: var(--background);
   animation: showRight 1s ease forwards;
   animation-delay: 3s;
   z-index: 100;
