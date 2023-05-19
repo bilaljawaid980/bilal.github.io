@@ -4,3 +4,40 @@ h1 {
   text-transform: uppercase;
   margin-top: 4rem;
 }
+
+.container {
+  display: flex;
+  max-width: 90vw;
+  padding: 0 5% 0 5%;
+  margin: auto;
+  margin-top: 5rem;
+  width: 100%;
+}
+
+.project {
+  aspect-ratio: 16 / 9;
+  height: 330px;
+  border-radius: 3rem;
+  border: 1px solid rgba(0, 42, 255, 0.3);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  place-content: center;
+}
+
+.title {
+  font-size: 3.3rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  align-self: center;
+  height: max-content;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  object-fit: cover;
+}
