@@ -1,0 +1,87 @@
+---
+import Layout from "../layouts/Layout.astro";
+import profile from "../../public/assets/bilal.jpg";
+// import githubIcon from "../../public/icons/github.svg";
+// import facebookIcon from "../../public/icons/facebook.svg";
+// import linkedinIcon from "../../public/icons/linkedin.svg";
+// import mailIcon from "../../public/icons/mail.svg";
+
+const socials = [
+  {
+    name: "Github",
+    link: "https://github.com/bilaljawaid980",
+    icon: "/icons/github.svg",
+  },
+  {
+    name: "Facebook",
+    link: "https://www.facebook.com/bilal.jawaid980/",
+    icon: "/icons/facebook.svg",
+  },
+  {
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/bilal-jawaid-81a008253/",
+    icon: "/icons/linkedin.svg",
+  },
+  {
+    name: "Mail",
+    link: "mailto:bilal.jawaid890@gmail.com",
+    icon: "/icons/mail.svg",
+  },
+];
+---
+
+<Layout title="Bilal Jawaid - Computer Science Undergraduate | Freelancer">
+  <main class="max-w-6xl mx-auto grid grid-cols-2 w-full h-full">
+    <div class="mt-36">
+      <h1 class="text-5xl font-black">
+        Hey! I'm <span class="text-accent">Bilal</span>,
+      </h1>
+      <p class="text-text/70 max-w-md mt-2 text-xl">
+        an undergraduate student majoring in Computer Science at Salim Habib
+        University. Alongside my studies, I enjoy freelancing part-time.
+      </p>
+
+      <div class="mt-8 space-x-4 uppercase text-lg">
+        <a
+          href="tel:+923118300872"
+          class="px-5 rounded-sm bg-accent py-1 hover:shadow-xl transition-shadow duration-150 hover:shadow-accent border-accent border"
+          >Hire Me</a
+        >
+        <a
+          href="Bilal-CV.pdf"
+          download
+          class="px-5 rounded-sm hover:bg-accent py-1 hover:shadow-xl transition-shadow duration-150 hover:shadow-accent border-accent border"
+          >CV</a
+        >
+      </div>
+
+      <div class="mt-8 space-x-6 flex items-center text-accent">
+        {
+          socials.map(({ icon, link, name }) => (
+            <a
+              href={link}
+              aria-label={`Icon for ${name}`}
+              title={`Icon for ${name}`}
+              class="bg-accent p-1"
+            >
+              <img
+                src={icon}
+                class="w-6 h-6 text-accent"
+                alt={`Icon for ${name}`}
+              />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+    <div class="h-full">
+      <img
+        src={profile.src}
+        width={profile.width}
+        height={profile.height}
+        class="object-cover"
+        alt="Bilal Jawaid"
+      />
+    </div>
+  </main>
+</Layout>

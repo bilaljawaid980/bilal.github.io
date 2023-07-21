@@ -1,0 +1,28 @@
+---
+interface Link {
+  label: string;
+  src: string;
+}
+
+const links: Link[] = [
+  { label: "Home", src: "/" },
+  { label: "Github", src: "https://github.com/bilaljawaid980" },
+  { label: "Projects", src: "/projects" },
+  { label: "Contact", src: "tel:+923118300872" },
+];
+---
+
+<header class="w-full flex items-center justify-center h-24">
+  <div
+    class="max-w-7xl mx-auto w-full px-6 text-lg items-center justify-between h-full flex"
+  >
+    <a href="/" class="group relative font-bold text-xl select-none">
+      BILAL JAWAID <span
+        class="absolute top-8 bg-accent w-1/3 group-hover:w-full h-1 transition-[width] duration-200 rounded-full left-0"
+      ></span>
+    </a>
+    <div class="space-x-6">
+      {links.map(({ label, src }) => <a href={src}>{label}</a>)}
+    </div>
+  </div>
+</header>
