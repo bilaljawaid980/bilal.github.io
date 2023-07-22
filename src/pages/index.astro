@@ -1,10 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import profile from "../../public/assets/bilal.jpg";
-// import githubIcon from "../../public/icons/github.svg";
-// import facebookIcon from "../../public/icons/facebook.svg";
-// import linkedinIcon from "../../public/icons/linkedin.svg";
-// import mailIcon from "../../public/icons/mail.svg";
 
 const socials = [
   {
@@ -31,31 +27,33 @@ const socials = [
 ---
 
 <Layout title="Bilal Jawaid - Computer Science Undergraduate | Freelancer">
-  <main class="max-w-6xl mx-auto grid grid-cols-2 w-full h-full">
-    <div class="mt-36">
-      <h1 class="text-5xl font-black">
+  <main
+    class="max-w-6xl mx-auto lg:grid justify-center lg:grid-cols-2 w-full px-8"
+  >
+    <div class="mt-[clamp(4rem,10vw,9rem)]">
+      <h1 class="text-4xl sm:text-5xl font-black">
         Hey! I'm <span class="text-accent">Bilal</span>,
       </h1>
-      <p class="text-text/70 max-w-md mt-2 text-xl">
+      <p class="text-text/70 max-w-md mt-2 sm:text-xl">
         an undergraduate student majoring in Computer Science at Salim Habib
         University. Alongside my studies, I enjoy freelancing part-time.
       </p>
 
-      <div class="mt-8 space-x-4 uppercase text-lg">
+      <div class="mt-8 space-x-4 uppercase lg:text-lg">
         <a
           href="tel:+923118300872"
           class="px-5 rounded-sm bg-accent py-1 hover:shadow-xl transition-shadow duration-150 hover:shadow-accent border-accent border"
           >Hire Me</a
         >
         <a
-          href="Bilal-CV.pdf"
+          href="bilal-jawaid.pdf"
           download
           class="px-5 rounded-sm hover:bg-accent py-1 hover:shadow-xl transition-shadow duration-150 hover:shadow-accent border-accent border"
           >CV</a
         >
       </div>
 
-      <div class="mt-8 space-x-6 flex items-center text-accent">
+      <div class="mt-4 lg:mt-8 space-x-6 flex items-center text-accent">
         {
           socials.map(({ icon, link, name }) => (
             <a
@@ -66,7 +64,7 @@ const socials = [
             >
               <img
                 src={icon}
-                class="w-6 h-6 text-accent"
+                class="sm:w-6 w-4 sm:h-6 h-4 text-accent"
                 alt={`Icon for ${name}`}
               />
             </a>
@@ -74,12 +72,13 @@ const socials = [
         }
       </div>
     </div>
-    <div class="h-full">
+
+    <div class="flex items-start mt-6 sm:mt-12">
       <img
         src={profile.src}
         width={profile.width}
         height={profile.height}
-        class="object-cover"
+        class="object-cover sm:max-w-md mx-auto rounded-lg shadow-xl"
         alt="Bilal Jawaid"
       />
     </div>
