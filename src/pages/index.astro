@@ -7,22 +7,22 @@ const socials = [
   {
     name: "Github",
     link: "https://github.com/bilaljawaid980",
-    icon: "/icons/github.svg",
+    icon: "github",
   },
   {
     name: "Facebook",
     link: "https://www.facebook.com/bilal.jawaid980/",
-    icon: "/icons/facebook.svg",
+    icon: "facebook",
   },
   {
     name: "LinkedIn",
     link: "https://www.linkedin.com/in/bilal-jawaid-81a008253/",
-    icon: "/icons/linkedin.svg",
+    icon: "linkedin",
   },
   {
     name: "Mail",
     link: "mailto:bilal.jawaid890@gmail.com",
-    icon: "/icons/mail.svg",
+    icon: "mail",
   },
 ];
 ---
@@ -63,11 +63,9 @@ const socials = [
               title={`Icon for ${name}`}
               class="bg-accent p-1"
             >
-              <img
-                src={icon}
-                class="sm:w-6 w-4 sm:h-6 h-4 text-accent"
-                alt={`Icon for ${name}`}
-              />
+              <svg class="sm:w-6 w-4 sm:h-6 h-4 text-accent">
+                <use href={`/icons/sprite.svg#${icon}`} />
+              </svg>
             </a>
           ))
         }
@@ -76,9 +74,7 @@ const socials = [
 
     <div class="flex items-start mt-6 sm:mt-12">
       <Image
-        src={profile.src}
-        width={profile.width}
-        height={profile.height}
+        src={profile}
         loading={"eager"}
         class="object-cover sm:max-w-md mx-auto rounded-lg shadow-xl"
         alt="Bilal Jawaid"
