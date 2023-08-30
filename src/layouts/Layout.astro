@@ -1,0 +1,87 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/600.css";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="title" content={title} />
+    <meta
+      name="description"
+      content="Welcome to the official website of Bilal Jawaid, a dedicated Computer Science undergraduate student at Salim Habib University. Explore my portfolio and learn more about my freelance work in programming and web development. Contact me for collaborations and projects."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bilaljawaid.netlify.app" />
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content="Welcome to the official website of Bilal Jawaid, a dedicated Computer Science undergraduate student at Salim Habib University. Explore my portfolio and learn more about my freelance work in programming and web development. Contact me for collaborations and projects."
+    />
+    <meta property="og:image" content="/assets/bilal.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://bilaljawaid.netlify.app" />
+    <meta property="twitter:title" content={title} />
+    <meta
+      property="twitter:description"
+      content="Welcome to the official website of Bilal Jawaid, a dedicated Computer Science undergraduate student at Salim Habib University. Explore my portfolio and learn more about my freelance work in programming and web development. Contact me for collaborations and projects."
+    />
+
+    <!--  -->
+    <link rel="manifest" href="/misc/site.webmanifest" />
+    <link rel="mask-icon" href="/misc/safari-pinned-tab.svg" color="#001219" />
+    <link rel="shortcut icon" href="/misc/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#001219" />
+    <meta name="msapplication-config" content="/misc/browserconfig.xml" />
+    <meta name="theme-color" content="#001219" />
+  </head>
+  <body class="grid bg-background text-text">
+    <Header />
+
+    <slot />
+
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --text: 255 255 255;
+    --background: 6 6 6;
+    --primary: 209 92 92;
+    --secondary: 32 34 34;
+    --accent: 200 60 60;
+  }
+
+  /* * {
+    border: 1px solid red !important;
+  } */
+
+  html {
+    height: 100%;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    height: 100%;
+    grid-template-rows: auto 1fr auto;
+  }
+</style>

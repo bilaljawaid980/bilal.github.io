@@ -1,0 +1,84 @@
+---
+import Layout from "../layouts/Layout.astro";
+import profile from "../../public/assets/bilal.jpg";
+import { Image } from "astro:assets";
+
+const socials = [
+  {
+    name: "Github",
+    link: "https://github.com/bilaljawaid980",
+    icon: "github",
+  },
+  {
+    name: "Facebook",
+    link: "https://www.facebook.com/bilal.jawaid980/",
+    icon: "facebook",
+  },
+  {
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/bilal-jawaid-81a008253/",
+    icon: "linkedin",
+  },
+  {
+    name: "Mail",
+    link: "mailto:bilal.jawaid890@gmail.com",
+    icon: "mail",
+  },
+];
+---
+
+<Layout title="Bilal Jawaid - Computer Science Undergraduate | Freelancer">
+  <main
+    class="max-w-6xl mx-auto lg:grid justify-center lg:grid-cols-2 w-full px-8"
+  >
+    <div class="mt-[clamp(4rem,10vw,9rem)]">
+      <h1 class="text-4xl sm:text-5xl font-black">
+        Hey! I'm <span class="text-accent">Bilal</span>,
+      </h1>
+      <p class="text-text/70 max-w-md mt-2 sm:text-xl">
+        an undergraduate student majoring in Computer Science at Salim Habib
+        University. Alongside my studies, I enjoy freelancing part-time.
+      </p>
+
+      <div class="mt-8 space-x-4 uppercase lg:text-lg">
+        <a
+          href="tel:+923118300872"
+          class="px-5 rounded-sm bg-accent py-1 hover:shadow-xl transition-shadow duration-150 hover:shadow-accent border-accent border"
+          >Hire Me</a
+        >
+        <a
+          href="bilal-jawaid.pdf"
+          download
+          class="px-5 rounded-sm hover:bg-accent py-1 hover:shadow-xl transition-shadow duration-150 hover:shadow-accent border-accent border"
+          >CV</a
+        >
+      </div>
+
+      <div class="mt-4 lg:mt-8 space-x-6 flex items-center text-accent">
+        {
+          socials.map(({ icon, link, name }) => (
+            <a
+              href={link}
+              aria-label={`Icon for ${name}`}
+              title={`Icon for ${name}`}
+              class="bg-accent p-1"
+            >
+              <svg class="sm:w-6 w-4 sm:h-6 h-4 text-accent">
+                <use href={`/icons/sprite.svg#${icon}`} />
+              </svg>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="flex items-start mt-6 sm:mt-12">
+      <Image
+        src={profile}
+        loading={"eager"}
+        class="object-cover sm:max-w-md mx-auto rounded-lg shadow-xl"
+        alt="Bilal Jawaid"
+      />
+    </div>
+  </main>
+</Layout>
