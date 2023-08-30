@@ -63,7 +63,10 @@ const socials = [
               title={`Icon for ${name}`}
               class="bg-accent p-1"
             >
-              <svg class="sm:w-6 w-4 sm:h-6 h-4 text-accent">
+              <svg
+                class="sm:w-6 w-4 sm:h-6 h-4 text-accent"
+                aria-label={`Icon for ${name}`}
+              >
                 <use href={`/icons/sprite.svg#${icon}`} />
               </svg>
             </a>
